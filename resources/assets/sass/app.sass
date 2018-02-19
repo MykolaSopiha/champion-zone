@@ -1,0 +1,445 @@
+@import 'reset'
+@import 'fonts'
+@import 'icons'
+@import 'vars'
+@import 'common'
+
+
+
+// ----------- LIBRARIES begin -----------
+@import 'libs/mixins'
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap'
+@import 'node_modules/jquery-ui-bundle/jquery-ui.min'
+@import 'node_modules/chosen-js/chosen.min'
+@import 'node_modules/datatables/media/css/jquery.dataTables.min'
+// ----------- LIBRARIES end -----------
+
+
+
+// ----------- MAIN-PAGE begin -----------
+.main-page
+	min-height: 100%
+	background-image: url("../img/main-bg.jpg")
+	background-size: cover
+	background-position-x: left
+	background-position-y: top
+
+.main-logo
+	padding: 30px 10px
+	margin: 0 auto
+	max-width: 1200px
+	.icon
+		font-size: 507px
+// ----------- MAIN-PAGE end -----------
+
+
+
+// ----------- HEADER begin -----------
+.header
+	padding: 15px
+	&__menu
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		h2
+			padding: 0 22px
+	&--merino
+		background-color: $merino
+	&--home
+		nav
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+	+r($tablet)
+		padding: 10px
+
+.header-inner
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+	max-width: 1400px
+	margin: 0 auto
+	min-height: 100px
+	&--home
+		align-items: start
+		+r($tablet)
+			flex-direction: column
+			justify-content: center
+			align-items: stretch
+		+r($tablet)
+			.icon-world_cup
+				display: none
+
+.logo
+	padding: 0 20px
+	.icon
+		font-size: 95px
+// ----------- HEADER end -----------
+
+
+
+// ----------- NAV begin -----------
+.nav
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: flex-end
+	align-items: center
+	a, p
+		display: inline-block
+		margin-right: 10px
+		margin-left: 10px
+		padding: 10px
+		font-size: 18px
+	p
+		color: #333
+	a
+		color: $straw
+		font-weight: bold
+		text-align: center
+		text-decoration: none
+		text-transform: uppercase
+		border: 2px solid $straw
+		border-radius: 21px
+		transition: 200ms
+		+hover
+			color: $galliano
+			border: 2px solid $galliano
+	&__auth-link
+		min-width: 160px
+	&--main-page
+		a
+			color: #fff
+			border: 2px solid transparent
+			+hover
+				color: #333333
+				border: 2px solid #333333
+				background-color: transparent
+
+.menu_icon
+	display: none
+	+r($tablet)
+		display: inline-block
+
+.menu_icon
+	font-size: 24px
+	width: 1.333em
+	height: 1em
+	position: relative
+	transform: rotate(0deg)
+	transition: .5s ease-in-out
+	cursor: pointer
+	span
+		display: block
+		position: absolute
+		height: 0.2em
+		width: 100%
+		background: black
+		border-radius: 0.2em
+		opacity: 1
+		left: 0
+		transform: rotate(0deg)
+		transition: .25s ease-in-out
+		&:nth-child(1)
+			top: 0
+			transform-origin: left center
+		&:nth-child(2)
+			top: 0.4em
+			transform-origin: left center
+		&:nth-child(3)
+			top: 0.8em
+			transform-origin: left center
+	&.open span
+		&:nth-child(1)
+			transform: rotate(45deg)
+			top: -0.0667em
+			left: 0.1778em
+		&:nth-child(2)
+			width: 0%
+			opacity: 0
+		&:nth-child(3)
+			transform: rotate(-45deg)
+			top: 0.8667em
+			left: 0.1778em
+
+.account-nav
+	flex-grow: 1
+	margin-top: 18px
+	&__page
+		margin: 0 0 8px 0
+		color: #333
+		font-size: 24px
+		+r($tablet)
+			display: none
+			text-align: center
+		+r($mobile)
+			display: block
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0
+		li
+			margin: 12px 20px 5px 20px
+			&:first-child
+				margin-left: 0
+			&:last-child
+				margin-right: 0
+		a
+			color: #656565
+			font-size: 12px
+			font-weight: bold
+			text-transform: uppercase
+			text-decoration: none
+			+hover
+				text-decoration: underline
+		+r($tablet)
+			justify-content: center
+		+r($mobile)
+			display: none
+			flex-direction: column
+			li
+				margin: 12px 0 5px 0
+				text-align: center
+			a
+				font-size: 16px
+	+r($tablet)
+		flex-grow: 0
+		margin-top: 0
+
+
+.user
+	margin-top: 18px
+	text-align: right
+	.icon
+		font-size: 23px
+	&__name
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		color: #656565
+		span
+			padding-left: 12px
+			font-weight: bold
+	&__links
+		margin-top: 20px
+		a
+			color: #656565
+			font-size: 14px
+			font-weight: bold
+			text-decoration: none
+			+hover
+				text-decoration: underline
+		+r($tablet)
+			margin: 0
+	+r($tablet)
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-around
+		&__logout
+			margin-top: 0
+// ----------- NAV end -----------
+
+
+
+// ----------- DIV.MAIN begin -----------
+.main
+	max-width: 1400px
+	margin: 0 auto
+	padding-top: 50px
+	padding-bottom: 50px
+// ----------- DIV.MAIN end -----------
+
+
+
+//------------- FORM begin -------------
+.form
+	width: 100%
+	max-width: 600px
+	margin-right: auto
+	margin-left: auto
+	padding-right: 10px
+	padding-left: 10px
+	&__header
+		margin-bottom: 50px
+	&__two-columns
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-column-gap: 10px
+	&__item
+		margin-bottom: 30px
+		&--error
+			p
+				margin-bottom: 14px
+				padding-top: 10px
+				padding-bottom: 10px
+				color: red
+		&--mail-send
+			p
+				padding: 25px
+				border: 1px solid green
+				border-radius: 10px
+				background-color: lightgreen
+	&__pass-reset
+		text-align: center
+		a
+			color: #333
+			text-decoration: underline
+	label
+		display: inline-block
+		margin-bottom: 16px
+		color: #d5bd8d
+		font-size: 18px
+		font-weight: bold
+		text-transform: uppercase
+	select, input:not([type='radio'])
+		padding: 0 25px
+		height: 70px
+		width: 100%
+		border: 1px solid #999999
+		border-radius: 10px
+		color: #000
+		font-size: 18px
+		outline: none
+	input[type="checkbox"]
+		width: auto
+		height: auto
+	textarea
+		max-width: 100%
+		padding: 10px 25px
+		border-radius: 10px
+		outline: none
+	button[type='submit']
+		display: block
+		padding: 0 25px
+		margin: 20px auto
+		width: auto
+		min-width: 196px
+		height: 56px
+		border: none
+		border-radius: 28px
+		background-color: #d5bd8d
+		color: #fff
+		font-size: 18px
+		text-transform: uppercase
+		outline: none
+		cursor: pointer
+		transition: 200ms
+		+hover
+			background-color: #D5BDA9
+	&--small
+		.form__header
+			margin-bottom: 30px
+		.form__item
+			margin-bottom: 15px
+		label
+			margin-bottom: 5px
+			font-size: 16px
+		input, select
+			height: 30px
+			font-size: 16px
+//------------- FORM end -------------
+
+
+
+//------------- TABLE begin -------------
+.table
+	padding-top: 25px
+	width: 100%
+	color: #333
+	font-size: 14px
+	text-align: center
+	thead, tfoot
+		background-color: $merino
+	tr
+		&:nth-child(even)
+			background-color: #fdfbf8
+		+hover
+			background-color: $merino
+	th, td
+		text-align: center
+	td
+		padding-top: 12px
+		padding-bottom: 12px
+		padding-right: 10px
+		padding-left: 10px
+
+//------------- TABLE end -------------
+
+
+
+//------------- ITEMS begin -------------
+.items
+	+clr
+	&__add
+		float: left
+		width: 360px
+	&__list
+		padding-right: 10px
+		padding-left: 10px
+		overflow: hidden
+		h2
+			margin-bottom: 83px
+	+r($tablet)
+		&__add
+			float: none
+			margin: 0 auto
+			width: 100%
+		&__list
+			h2
+				margin-top: 20px
+				margin-bottom: 50px
+
+//------------- ITEMS end -------------
+
+
+		
+//------------- CARDS TABLE ACTIONDIV. begin -------------
+.card-actions
+	text-align: center
+	a
+		text-decoration: none
+	i
+		cursor: pointer
+		color: black
+	form
+		display: inline-block
+	button
+		background-color: transparent
+		border: none
+
+.card_user
+	span
+		cursor: pointer
+	.fa-pencil
+		display: none
+		+hover
+			display: inline-block
+
+.select-action
+	margin: 20px 0
+	+r($tablet)
+		*
+			display: block
+			margin-bottom: 10px
+
+.second_card
+	display: none
+//------------- CARDS TABLE ACTIONDIV. end -------------
+
+
+
+//------------- MOTIVATION TABLE begin -------------
+.benefits
+	&__header
+		margin-bottom: 50px
+		text-align: center
+	&__tables
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-gap: 10px
+		+r($tablet)
+			grid-template-columns: 1fr
+//------------- MOTIVATION TABLE end -------------
